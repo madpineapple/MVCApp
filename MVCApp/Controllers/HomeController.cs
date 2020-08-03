@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -33,5 +34,17 @@ namespace MVCApp.Controllers
 
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Signup(EmployeeModel model)
+        {if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            
+
+            return View();
+        }
     }
+
 }
