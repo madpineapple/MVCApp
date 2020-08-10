@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using static DataLibrary.BusinessLogic.EmployeeProcessor;
 
 namespace MVCApp.Controllers
 {
@@ -39,6 +40,9 @@ namespace MVCApp.Controllers
         public ActionResult Signup(EmployeeModel model)
         {if (ModelState.IsValid)
             {
+               int recordsCreated= CreateEmployee(model.EmployeeId, 
+                    model.FirstName, model.LastName, 
+                    model.EmailAddress);
                 return RedirectToAction("Index");
             }
             

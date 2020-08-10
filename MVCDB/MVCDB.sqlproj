@@ -56,5 +56,17 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\tables" />
+    <Folder Include="publishProfile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\tables\Employee.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="MVCDB.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="publishProfile\MVCDB.publish.xml" />
   </ItemGroup>
 </Project>
